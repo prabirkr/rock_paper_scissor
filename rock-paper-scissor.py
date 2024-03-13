@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, font
 import random
 
 # Function to determine the winner
@@ -27,16 +27,20 @@ def button_click(choice):
 # Create the main window
 window = tk.Tk()
 window.title("Rock Paper Scissors")
+window.geometry("400x300")  # Set window size
+
+# Create a custom font
+custom_font = font.Font(size=20)
 
 # Create buttons for user choices
-rock_button = tk.Button(window, text="Rock", command=lambda: button_click('rock'))
-rock_button.pack()
+rock_button = tk.Button(window, text="Rock", command=lambda: button_click('rock'), font=custom_font)
+rock_button.grid(row=0, column=0, padx=10, pady=10)
 
-paper_button = tk.Button(window, text="Paper", command=lambda: button_click('paper'))
-paper_button.pack()
+paper_button = tk.Button(window, text="Paper", command=lambda: button_click('paper'), font=custom_font)
+paper_button.grid(row=0, column=1, padx=10, pady=10)
 
-scissors_button = tk.Button(window, text="Scissors", command=lambda: button_click('scissors'))
-scissors_button.pack()
+scissors_button = tk.Button(window, text="Scissors", command=lambda: button_click('scissors'), font=custom_font)
+scissors_button.grid(row=0, column=2, padx=10, pady=10)
 
 # Start the main event loop
 window.mainloop()
